@@ -1,0 +1,30 @@
+{
+  "name": "graphql-blog-backend",
+  "version": "0.0.1",
+  "description": "A barebones blog backend built with mongo native node driver, express, and graphql",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "build": "babel -d dist/ src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhen Lu",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.20.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^1.1.2",
+    "babel-preset-env": "^1.6.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.16.1",
+    "graphql": "^0.11.6",
+    "graphql-server-express": "^1.1.2",
+    "graphql-tools": "^0.8.3",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.15"
+  }
+}
