@@ -5,18 +5,18 @@ import {graphqlExpress, graphiqlExpress} from 'apollo-server-express'
 import {makeExecutableSchema} from 'graphql-tools'
 import cors from 'cors'
 
-const URL = 'http://localhost'
-const PORT = 3001
-const MONGO_URL = 'mongodb://localhost:27017/blog'
+const URL = 'http://localhost';
+const PORT = 3001;
+const MONGO_URL = 'mongodb://localhost:27017/blog';
 
 const prepare = (o) => {
-  o._id = o._id.toString()
+  o._id = o._id.toString();
   return o
-}
+};
 
 export const start = async () => {
   try {
-    const db = await MongoClient.connect(MONGO_URL)
+    const db = await MongoClient.connect(MONGO_URL);
 
     const Posts = db.collection('posts');
     const Comments = db.collection('comments');
@@ -104,15 +104,15 @@ export const start = async () => {
       resolvers
     });
 
-    const app = express()
+    const app = express();
 
-    app.use(cors())
+    app.use(cors());
 
-    app.use('/graphql', bodyParser.json(), graphqlExpress({schema}))
+    app.use('/graphql', bodyParser.json(), graphqlExpress({schema}));
 
     app.use('/graphiql', graphiqlExpress({
       endpointURL: '/graphql'
-    }))
+    }));
 
     app.listen(PORT, () => {
       console.log(`Visit ${URL}:${PORT}`)
@@ -122,4 +122,4 @@ export const start = async () => {
     console.log(e)
   }
 
-}
+};
