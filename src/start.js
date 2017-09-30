@@ -4,6 +4,9 @@ import bodyParser from 'body-parser'
 import {graphqlExpress, graphiqlExpress} from 'apollo-server-express'
 import {makeExecutableSchema} from 'graphql-tools'
 import cors from 'cors'
+import moment from 'moment';
+
+import { momentFormat } from "./util/moment.config";
 
 const URL = 'http://localhost';
 const PORT = 3001;
@@ -30,12 +33,21 @@ export const start = async () => {
 
       type Post {
         _id: String
+        author: Author
         creationDate: String
         editDate: String
         title: String!
         content: String!
         tags: [String]
         comments: [Comment]
+      }
+      
+      type Author {
+        _id: String
+        firstName: String!
+        lastName: String!
+        email: String
+        description: String
       }
 
       type Comment {
@@ -46,8 +58,9 @@ export const start = async () => {
       }
 
       type Mutation {
-        createPost(title: String, content: String, tags: [String]): Post
+        createPost(title: String!, content: String!, tags: [String]): Post
         createComment(postId: String, content: String): Comment
+        editPost(_id: String!, title: String, content: String, tags: [String]): Post
       }
 
       schema {
@@ -86,8 +99,8 @@ export const start = async () => {
             title,
             content,
             tags,
-            creationDate: Date.now(),
-            editDate: 0
+            creationDate: moment().format(momentFormat),
+            editDate: null
           });
           console.log(res);
           return prepare(await Posts.findOne({_id: res.insertedId}))

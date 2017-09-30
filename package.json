@@ -4,7 +4,7 @@
   "description": "A barebones blog backend built with mongo native node driver, express, and graphql",
   "main": "dist/index.js",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "babel-watch --watch src/start.js src/index.js",
     "build": "babel -d dist/ src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,8 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-regenerator": "^6.20.0"
+    "babel-plugin-transform-regenerator": "^6.20.0",
+    "babel-watch": "^2.0.7"
   },
   "dependencies": {
     "apollo-server-express": "^1.1.2",
@@ -25,6 +26,7 @@
     "graphql-server-express": "^1.1.2",
     "graphql-tools": "^0.8.3",
     "moment": "^2.18.1",
-    "mongodb": "^2.2.15"
+    "mongodb": "^2.2.15",
+    "passport": "^0.4.0"
   }
 }
