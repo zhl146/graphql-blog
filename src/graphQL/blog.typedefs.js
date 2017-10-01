@@ -3,6 +3,7 @@ export const blogTypeDefs = [`
         post(_id: String): Post
         posts(tag: String, offset: Int, limit: Int): [Post]
         comment(_id: String): Comment
+        tags: [Tag]
       }
 
       type Post {
@@ -12,7 +13,7 @@ export const blogTypeDefs = [`
         editDate: String
         title: String!
         content: String!
-        tags: [String]
+        tags: [Tag]
         comments: [Comment]
       }
       
@@ -22,6 +23,11 @@ export const blogTypeDefs = [`
         lastName: String!
         email: String
         description: String
+      }
+      
+      type Tag {
+        _id: String
+        content: String
       }
 
       type Comment {
@@ -35,6 +41,7 @@ export const blogTypeDefs = [`
         createPost(title: String!, content: String!, tags: [String]): Post
         createComment(postId: String, content: String): Comment
         editPost(_id: String!, title: String, content: String, tags: [String]): Post
+        createTag(content: String!): Tag
       }
 
       schema {

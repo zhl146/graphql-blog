@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ed061b6-f129-44fb-a898-0ae154d1252b" name="Default" comment="" />
+    <list default="true" id="6ed061b6-f129-44fb-a898-0ae154d1252b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphQL/blog.resolvers.js" afterPath="$PROJECT_DIR$/src/graphQL/blog.resolvers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphQL/blog.typedefs.js" afterPath="$PROJECT_DIR$/src/graphQL/blog.typedefs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mongoConnection.js" afterPath="$PROJECT_DIR$/src/mongoConnection.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.34431323">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
@@ -31,21 +35,18 @@
           <file leaf-file-name="mongoConnection.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/mongoConnection.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-                  <folding>
-                    <marker date="1506818358875" expanded="true" signature="129:308" ph="{...}" />
-                    <marker date="1506818358875" expanded="true" signature="277:306" ph="{&quot;Posts&quot;: Posts...}" />
-                  </folding>
+                <state relative-caret-position="162">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="22" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="blog.typedefs.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.typedefs.js">
+            <entry file="file://$PROJECT_DIR$/src/graphQL/blog.typedefs.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="108">
-                  <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -56,26 +57,12 @@
       <split-second>
         <leaf>
           <file leaf-file-name="blog.resolvers.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js">
+            <entry file="file://$PROJECT_DIR$/src/graphQL/blog.resolvers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="666">
-                  <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+                <state relative-caret-position="702">
+                  <caret line="39" column="79" lean-forward="false" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
                   <folding>
-                    <marker date="1506871151566" expanded="true" signature="7:86" ph="..." />
-                    <marker date="1506871151566" expanded="true" signature="111:153" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="185:1614" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="196:809" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="240:304" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="496:687" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="737:804" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="819:948" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="864:944" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="961:1073" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="1002:1069" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="1087:1611" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="1157:1427" ph="{...}" />
-                    <marker date="1506871151566" expanded="true" signature="1199:1330" ph="{&quot;title&quot;: title...}" />
-                    <marker date="1506871151566" expanded="true" signature="1482:1607" ph="{...}" />
+                    <element signature="e#0#35#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -102,18 +89,20 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/util/moment.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/mongoConnection.js" />
-        <option value="$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js" />
         <option value="$PROJECT_DIR$/src/graphQL/blog/blog.typedefs.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/mongoConnection.js" />
         <option value="$PROJECT_DIR$/src/graphQL/blog/blog.typedefs.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/src/start.js" />
         <option value="$PROJECT_DIR$/src/start.js" />
+        <option value="$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js" />
+        <option value="$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js" />
+        <option value="$PROJECT_DIR$/src/graphQL/blog.typedefs.js" />
+        <option value="$PROJECT_DIR$/src/mongoConnection.js" />
+        <option value="$PROJECT_DIR$/src/mongoConnection.js" />
+        <option value="$PROJECT_DIR$/src/graphQL/blog.resolvers.js" />
       </list>
     </option>
   </component>
@@ -195,13 +184,6 @@
               <item name="graphql-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="graphql-backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graphQL" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graphql-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graphql-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -219,6 +201,11 @@
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/graphQL" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,16 +230,15 @@
       <option name="presentableId" value="Default" />
       <updated>1506731830300</updated>
       <workItem from="1506731831719" duration="24665000" />
-      <workItem from="1506871488925" duration="700000" />
+      <workItem from="1506871488925" duration="6183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25365000" />
+    <option name="totallyTimeSpent" value="30848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="2051" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14912744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -261,7 +247,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30753246" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2425974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -308,14 +294,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding>
-            <marker date="1506818358875" expanded="true" signature="129:308" ph="{...}" />
-            <marker date="1506818358875" expanded="true" signature="277:306" ph="{&quot;Posts&quot;: Posts...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.typedefs.js">
+    <entry file="file://$PROJECT_DIR$/src/graphQL/blog.typedefs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
@@ -347,26 +330,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js">
+    <entry file="file://$PROJECT_DIR$/src/graphQL/blog.resolvers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
-            <marker date="1506871151566" expanded="true" signature="7:86" ph="..." />
-            <marker date="1506871151566" expanded="true" signature="111:153" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="185:1614" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="196:809" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="240:304" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="496:687" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="737:804" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="819:948" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="864:944" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="961:1073" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1002:1069" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1087:1611" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1157:1427" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1199:1330" ph="{&quot;title&quot;: title...}" />
-            <marker date="1506871151566" expanded="true" signature="1482:1607" ph="{...}" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -394,46 +363,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.resolvers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-          <folding>
-            <marker date="1506871151566" expanded="true" signature="7:86" ph="..." />
-            <marker date="1506871151566" expanded="true" signature="111:153" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="185:1614" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="196:809" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="240:304" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="496:687" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="737:804" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="819:948" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="864:944" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="961:1073" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1002:1069" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1087:1611" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1157:1427" ph="{...}" />
-            <marker date="1506871151566" expanded="true" signature="1199:1330" ph="{&quot;title&quot;: title...}" />
-            <marker date="1506871151566" expanded="true" signature="1482:1607" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mongoConnection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding>
-            <marker date="1506818358875" expanded="true" signature="129:308" ph="{...}" />
-            <marker date="1506818358875" expanded="true" signature="277:306" ph="{&quot;Posts&quot;: Posts...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -481,11 +415,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphQL/blog/blog.typedefs.js">
+    <entry file="file://$PROJECT_DIR$/src/mongoConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphQL/blog.typedefs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphQL/blog.resolvers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="79" lean-forward="false" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

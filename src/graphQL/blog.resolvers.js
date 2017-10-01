@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb';
 import moment from 'moment';
 
 import { momentFormat } from "../util/moment.config";
@@ -9,8 +10,7 @@ const prepare = (o) => {
 
 // QUERIES
 
-export const getPostById = async (root, {_id}, {Posts}) =>
-  prepare(await Posts.findOne(ObjectId(_id)));
+export const getPostById = async (root, {_id}, {Posts}) => prepare(await Posts.findOne(ObjectId(_id)));
 
 export const getPosts = async (
   root,
@@ -27,14 +27,21 @@ export const getPosts = async (
     .toArray())
     .map(prepare);
 
-export const getCommentById = async (root, {_id}, {Comments}) =>
-  prepare(await Comments.findOne(ObjectId(_id)));
+export const getCommentById = async (root, {_id}, {Comments}) => prepare(await Comments.findOne(ObjectId(_id)));
 
-export const getCommentsByPostId = async ({_id}, {Comments}) =>
-  (await Comments.find({postId: _id}).toArray()).map(prepare);
+export const getTags = async (root, args, {Tags}) => (await Tags.find({}).toArray()).map(prepare);
 
-export const getPostByComment = async ({postId}, {Posts}) =>
-  prepare(await Posts.findOne(ObjectId(postId)));
+export const getCommentsByPostId = async ({_id}, args, {Comments}) =>
+  (await Comments.find({postId: _id})
+    .toArray())
+    .map(prepare);
+
+export const getTagsByPost = async ({tags}, args, {Tags}) => {
+  return tags.map( async tagId => prepare(await Tags.findOne(ObjectId(tagId))));
+};
+
+
+export const getPostByComment = async ({postId}, args, {Posts}) => prepare(await Posts.findOne(ObjectId(postId)));
 
 // MUTATIONS
 
@@ -46,7 +53,6 @@ export const createPost = async (root, {title, content, tags=[]}, {Posts}) => {
     creationDate: moment().format(momentFormat),
     editDate: null
   });
-  console.log(res);
   return prepare(await Posts.findOne({_id: res.insertedId}))
 };
 
@@ -55,20 +61,28 @@ export const createComment = async (root, args, {Comments}) => {
   return prepare(await Comments.findOne({_id: res.insertedId}))
 };
 
+export const createTag = async (root, {content}, {Tags}) => {
+  const res = await Tags.insertOne({content});
+  return prepare(await Tags.findOne({_id: res.insertedId}));
+};
+
 export const blogResolvers = {
   Query: {
     post: getPostById,
     posts: getPosts,
-    comment: getCommentById
+    comment: getCommentById,
+    tags: getTags
   },
   Post: {
-    comments: getCommentsByPostId
+    comments: getCommentsByPostId,
+    tags: getTagsByPost
   },
   Comment: {
     post: getPostByComment
   },
   Mutation: {
     createPost,
-    createComment
+    createComment,
+    createTag
   }
 };
