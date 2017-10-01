@@ -12,10 +12,19 @@ export const blogResolvers = {
     post: async (root, {_id}, {Posts}) => {
       return prepare(await Posts.findOne(ObjectId(_id)))
     },
-    posts: async (root, {tag = null}, {Posts}) => {
-      return tag === null
-        ? (await Posts.find({}).toArray()).map(prepare)
-        : (await Posts.find({tags: tag}).toArray()).map(prepare)
+    posts: async (root,
+                  {
+                    tag = null,
+                    limit = 10,
+                    offset = 0
+                  },
+                  {Posts}) => {
+      return (await
+        Posts.find(tag === null ? {} : {tags: tag})
+          .skip(offset)
+          .limit(limit)
+          .toArray())
+        .map(prepare)
     },
     comment: async (root, {_id}, {Comments}) => {
       return prepare(await Comments.findOne(ObjectId(_id)))

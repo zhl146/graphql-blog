@@ -1,7 +1,7 @@
 export const blogTypeDefs = [`
       type Query {
         post(_id: String): Post
-        posts(tag: String): [Post]
+        posts(tag: String, offset: Int, limit: Int): [Post]
         comment(_id: String): Comment
       }
 
