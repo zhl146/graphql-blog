@@ -19,11 +19,11 @@ export const blogResolvers = {
                     offset = 0
                   },
                   {Posts}) => {
-      return (await
-        Posts.find(tag === null ? {} : {tags: tag})
-          .skip(offset)
-          .limit(limit)
-          .toArray())
+      return (await Posts.find(tag === null ? {} : {tags: tag})
+        .sort({creationDate: -1})
+        .skip(offset)
+        .limit(limit)
+        .toArray())
         .map(prepare)
     },
     comment: async (root, {_id}, {Comments}) => {
