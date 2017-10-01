@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/graphql-mongodb-example.iml" filepath="$PROJECT_DIR$/.idea/graphql-mongodb-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../graphql-backend/.idea/graphql-backend.iml" filepath="$PROJECT_DIR$/../graphql-backend/.idea/graphql-backend.iml" />
     </modules>
   </component>
 </project>

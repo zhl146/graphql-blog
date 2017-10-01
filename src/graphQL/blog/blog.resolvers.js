@@ -7,32 +7,32 @@ const prepare = (o) => {
   return o
 };
 
-export const makeBlogResolvers = ({Posts, Comments}) => ({
+export const blogResolvers = {
   Query: {
-    post: async (root, {_id}) => {
+    post: async (root, {_id}, {Posts}) => {
       return prepare(await Posts.findOne(ObjectId(_id)))
     },
-    posts: async (root, {tag = null}) => {
+    posts: async (root, {tag = null}, {Posts}) => {
       return tag === null
         ? (await Posts.find({}).toArray()).map(prepare)
         : (await Posts.find({tags: tag}).toArray()).map(prepare)
     },
-    comment: async (root, {_id}) => {
+    comment: async (root, {_id}, {Comments}) => {
       return prepare(await Comments.findOne(ObjectId(_id)))
     },
   },
   Post: {
-    comments: async ({_id}) => {
+    comments: async ({_id}, {Comments}) => {
       return (await Comments.find({postId: _id}).toArray()).map(prepare)
     }
   },
   Comment: {
-    post: async ({postId}) => {
+    post: async ({postId}, {Posts}) => {
       return prepare(await Posts.findOne(ObjectId(postId)))
     }
   },
   Mutation: {
-    createPost: async (root, {title, content, tags=[]}) => {
+    createPost: async (root, {title, content, tags=[]}, {Posts}) => {
       const res = await Posts.insertOne({
         title,
         content,
@@ -43,9 +43,9 @@ export const makeBlogResolvers = ({Posts, Comments}) => ({
       console.log(res);
       return prepare(await Posts.findOne({_id: res.insertedId}))
     },
-    createComment: async (root, args) => {
+    createComment: async (root, args, {Comments}) => {
       const res = await Comments.insertOne(args);
       return prepare(await Comments.findOne({_id: res.insertedId}))
     }
   },
-});
+};
