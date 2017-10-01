@@ -4,8 +4,8 @@ import {graphqlExpress, graphiqlExpress} from 'apollo-server-express'
 import {makeExecutableSchema} from 'graphql-tools'
 import cors from 'cors'
 
-import { blogResolvers } from "./graphQL/blog/blog.resolvers";
-import { blogTypeDefs } from "./graphQL/blog/blog.typedefs";
+import { blogResolvers } from "./graphQL/blog.resolvers";
+import { blogTypeDefs } from "./graphQL/blog.typedefs";
 import { dbConnect } from "./mongoConnection";
 
 const URL = 'http://localhost';
