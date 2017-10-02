@@ -1,7 +1,8 @@
-export const blogTypeDefs = [`
+export const blogTypeDefs = [
+  `
       type Query {
         post(_id: String): Post
-        posts(tag: String, offset: Int, limit: Int): [Post]
+        posts(tag: String, offset: Int, limit: Int, startDate: String, endDate: String): [Post]
         comment(_id: String): Comment
         tags: [Tag]
       }
@@ -48,4 +49,5 @@ export const blogTypeDefs = [`
         query: Query
         mutation: Mutation
       }
-    `];
+    `
+];
