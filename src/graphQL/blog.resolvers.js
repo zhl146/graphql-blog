@@ -96,16 +96,24 @@ export const makePostUpdate = (title, preview, content, tags) => {
   return update;
 };
 
+export const editById = async (_id, collection, update) => {
+  const res = await collection.findOneAndUpdate(ObjectId(_id), {
+    $set: update
+  });
+  return prepare(await collection.findOne(ObjectId(_id)));
+};
+
 export const editPost = async (
   root,
   { _id, title, preview, content, tags = [] },
   { Posts }
-) => {
-  const res = await Posts.findOneAndUpdate(ObjectId(_id), {
-    $set: makePostUpdate(title, preview, content, tags)
-  });
-  return prepare(await Posts.findOne(ObjectId(_id)));
-};
+) => await editById(_id, Posts, makePostUpdate(title, preview, content, tags));
+
+export const editTag = async (root, { _id, content }, { Tags }) =>
+  await editById(_id, Tags, { content });
+
+export const editComment = async (root, { _id, content }, { Comments }) =>
+  await editById(_id, Comments, { content });
 
 export const deleteById = async (_id, collection) => {
   const res = await collection.findOne({ _id: ObjectId(_id) });
@@ -141,6 +149,8 @@ export const blogResolvers = {
     createComment,
     createTag,
     editPost,
+    editTag,
+    editComment,
     deletePost,
     deleteTag,
     deleteComment

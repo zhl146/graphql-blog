@@ -47,6 +47,8 @@ export const blogTypeDefs = [
         createComment(postId: String, content: String): Comment
         createTag(content: String!): Tag
         editPost(_id: String!, title: String, preview: String, content: String, tags: [String]): Post
+        editTag(_id: String!, content: String!): Tag
+        editComment(_id: String!, content: String!): Comment
         deletePost(_id: String!): Post
         deleteTag(_id: String!): Tag
         deleteComment(_id: String!): Comment
