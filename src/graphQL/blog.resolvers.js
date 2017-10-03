@@ -107,12 +107,23 @@ export const editPost = async (
   return prepare(await Posts.findOne(ObjectId(_id)));
 };
 
-export const deletePost = async (root, { _id }, { Posts }) => {
-  const res = Posts.findOne({_id: ObjectId(_id)});
-  await Posts.deleteOne({_id: ObjectId(_id)});
+export const deleteById = async (_id, collection) => {
+  const res = await collection.findOne({ _id: ObjectId(_id) });
+  await collection.deleteOne({ _id: ObjectId(_id) });
   return res;
 }
-  
+
+export const deletePost = async (root, { _id }, { Posts }) => {
+  return await deleteById(_id, Posts);
+};
+
+export const deleteTag = async (root, {_id}, { Tags }) => {
+  return await deleteById(_id, Tags);
+}
+
+export const deleteComment = async (root, {_id}, { Comments }) => {
+  return await deleteById(_id, Comments);
+}
 
 export const blogResolvers = {
   Query: {
@@ -133,6 +144,8 @@ export const blogResolvers = {
     createComment,
     createTag,
     editPost,
-    deletePost
+    deletePost,
+    deleteTag,
+    deleteComment
   }
 };

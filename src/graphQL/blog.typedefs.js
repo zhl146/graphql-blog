@@ -48,6 +48,8 @@ export const blogTypeDefs = [
         createTag(content: String!): Tag
         editPost(_id: String!, title: String, preview: String, content: String, tags: [String]): Post
         deletePost(_id: String!): Post
+        deleteTag(_id: String!): Tag
+        deleteComment(_id: String!): Comment
       }
 
       schema {
