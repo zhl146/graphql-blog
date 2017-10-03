@@ -2,7 +2,7 @@ export const blogTypeDefs = [
   `
       type Query {
         post(_id: String): Post
-        posts(tag: String, offset: Int, limit: Int, startDate: String, endDate: String): [Post]
+        posts(tag: String, offset: Int, limit: Int, year: Int, month: Int, day: Int): [Post]
         comment(_id: String): Comment
         tags: [Tag]
       }
@@ -11,8 +11,12 @@ export const blogTypeDefs = [
         _id: String
         author: Author
         creationDate: String
+        creationYear: Int
+        creationMonth: Int
+        creationDay: Int
         editDate: String
         title: String!
+        preview: String!
         content: String!
         tags: [Tag]
         comments: [Comment]
@@ -39,10 +43,10 @@ export const blogTypeDefs = [
       }
 
       type Mutation {
-        createPost(title: String!, content: String!, tags: [String]): Post
+        createPost(title: String!, preview: String!, content: String!, tags: [String]): Post
         createComment(postId: String, content: String): Comment
-        editPost(_id: String!, title: String, content: String, tags: [String]): Post
         createTag(content: String!): Tag
+        editPost(_id: String!, title: String, preview: String, content: String, tags: [String]): Post
       }
 
       schema {

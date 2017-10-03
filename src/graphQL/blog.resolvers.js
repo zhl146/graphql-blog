@@ -13,21 +13,26 @@ const prepare = o => {
 export const getPostById = async (root, { _id }, { Posts }) =>
   prepare(await Posts.findOne(ObjectId(_id)));
 
-export const makePostQuery = (tag = null, startDate = null, endDate = null) => {
-  const tagQuery = tag ? { tags: tag } : {};
-  const dateQuery =
-    startDate && endDate
-      ? { creationDate: { $gt: startDate, $lt: endDate } }
-      : startDate && !endDate ? { creationDate: startDate } : {};
-  return { ...tagQuery, ...dateQuery };
+export const makePostQuery = (
+  tag = null,
+  year = null,
+  month = null,
+  day = null
+) => {
+  let query = {};
+  if (tag) query.tags = tag;
+  if (year) query.creationYear = year;
+  if (month) query.creationMonth = month;
+  if (day) query.creationDay = day;
+  return query;
 };
 
 export const getPosts = async (
   root,
-  { tag = null, startDate = null, endDate = null, limit = 10, offset = 0 },
+  { tag = null, year = null, month = null, day = null, limit = 10, offset = 0 },
   { Posts }
 ) =>
-  (await Posts.find(makePostQuery(tag, startDate, endDate))
+  (await Posts.find(makePostQuery(tag, year, month, day))
     .sort({ creationDate: -1 })
     .skip(offset)
     .limit(limit)
@@ -54,14 +59,19 @@ export const getPostByComment = async ({ postId }, args, { Posts }) =>
 
 export const createPost = async (
   root,
-  { title, content, tags = [] },
+  { title, preview, content, tags = [] },
   { Posts }
 ) => {
+  const today = new Date();
   const res = await Posts.insertOne({
     title,
     content,
+    preview,
     tags,
-    creationDate: new Date(),
+    creationDate: today,
+    creationYear: today.getFullYear(),
+    creationMonth: today.getMonth(),
+    creationDay: today.getDate(),
     editDate: null
   });
   return prepare(await Posts.findOne({ _id: res.insertedId }));
@@ -75,6 +85,27 @@ export const createComment = async (root, args, { Comments }) => {
 export const createTag = async (root, { content }, { Tags }) => {
   const res = await Tags.insertOne({ content });
   return prepare(await Tags.findOne({ _id: res.insertedId }));
+};
+
+export const makePostUpdate = (title, preview, content, tags) => {
+  let update = { editDate: moment().format(momentFormat) };
+  if (title) update.title = title;
+  if (preview) update.preview = preview;
+  if (content) update.content = content;
+  if (tags) update.tags = tags;
+  return update;
+};
+
+export const editPost = async (
+  root,
+  { _id, title, preview, content, tags = [] },
+  { Posts }
+) => {
+  const res = await Posts.findOneAndUpdate(
+    ObjectId(_id),
+    { $set: makePostUpdate(title, preview, content, tags) }
+  );
+  return prepare(await Posts.findOne(ObjectId(_id)));
 };
 
 export const blogResolvers = {
@@ -94,6 +125,7 @@ export const blogResolvers = {
   Mutation: {
     createPost,
     createComment,
-    createTag
+    createTag,
+    editPost
   }
 };
