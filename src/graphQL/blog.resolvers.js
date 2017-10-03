@@ -101,12 +101,18 @@ export const editPost = async (
   { _id, title, preview, content, tags = [] },
   { Posts }
 ) => {
-  const res = await Posts.findOneAndUpdate(
-    ObjectId(_id),
-    { $set: makePostUpdate(title, preview, content, tags) }
-  );
+  const res = await Posts.findOneAndUpdate(ObjectId(_id), {
+    $set: makePostUpdate(title, preview, content, tags)
+  });
   return prepare(await Posts.findOne(ObjectId(_id)));
 };
+
+export const deletePost = async (root, { _id }, { Posts }) => {
+  const res = Posts.findOne({_id: ObjectId(_id)});
+  await Posts.deleteOne({_id: ObjectId(_id)});
+  return res;
+}
+  
 
 export const blogResolvers = {
   Query: {
@@ -126,6 +132,7 @@ export const blogResolvers = {
     createPost,
     createComment,
     createTag,
-    editPost
+    editPost,
+    deletePost
   }
 };

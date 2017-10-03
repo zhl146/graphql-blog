@@ -47,6 +47,7 @@ export const blogTypeDefs = [
         createComment(postId: String, content: String): Comment
         createTag(content: String!): Tag
         editPost(_id: String!, title: String, preview: String, content: String, tags: [String]): Post
+        deletePost(_id: String!): Post
       }
 
       schema {
