@@ -6,7 +6,7 @@ import cors from "cors";
 
 import { blogResolvers } from "./graphQL/blog.resolvers";
 import { blogTypeDefs } from "./graphQL/blog.typedefs";
-import { dbConnect } from "./mongoConnection";
+import { dbConnect } from "./config/mongo.config";
 
 const URL = "http://localhost";
 const PORT = 3001;
