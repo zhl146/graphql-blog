@@ -23,12 +23,16 @@
     "babel-preset-env": "^1.6.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
+    "emailjs": "^1.0.12",
     "express": "^4.16.1",
     "graphql": "^0.11.6",
     "graphql-server-express": "^1.1.2",
     "graphql-tools": "^0.8.3",
     "moment": "^2.18.1",
     "mongodb": "^2.2.15",
-    "passport": "^0.4.0"
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "passwordless": "^1.1.2",
+    "passwordless-mongostore": "^0.1.4"
   }
 }
