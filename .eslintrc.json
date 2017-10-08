@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "rules": {
+        "no-underscore-dangle": [2, { "allow": [] }]
+    }
+    
+}
