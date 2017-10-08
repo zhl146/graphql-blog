@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 
-const prepare = o => {
+export const prepare = o => {
   o._id = o._id.toString();
   return o;
 };
