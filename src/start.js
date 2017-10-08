@@ -4,14 +4,14 @@ import { graphqlExpress, graphiqlExpress } from "apollo-server-express";
 import { makeExecutableSchema } from "graphql-tools";
 import cors from "cors";
 
-import { blogResolvers } from "./graphQL/blog.resolvers";
-import { blogTypeDefs } from "./graphQL/blog.typedefs";
-import { dbConnect } from "./config/mongo.config";
+import blogResolvers from "./graphQL/blog.resolvers";
+import blogTypeDefs from "./graphQL/blog.typedefs";
+import dbConnect from "./config/mongo.config";
 
 const URL = "http://localhost";
 const PORT = 3001;
 
-export const start = async () => {
+const start = async () => {
   try {
     const schema = makeExecutableSchema({
       typeDefs: blogTypeDefs,
@@ -37,3 +37,5 @@ export const start = async () => {
     console.log(e);
   }
 };
+
+export default start;

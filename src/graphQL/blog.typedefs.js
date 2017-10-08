@@ -1,4 +1,4 @@
-export const blogTypeDefs = [
+const blogTypeDefs = [
   `
       type Query {
         post(_id: String): Post
@@ -60,3 +60,5 @@ export const blogTypeDefs = [
       }
     `
 ];
+
+export default blogTypeDefs;
