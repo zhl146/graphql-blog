@@ -1,3 +1,4 @@
+import * as functions from "firebase-functions"
 import express from "express";
 import bodyParser from "body-parser";
 import { graphqlExpress, graphiqlExpress } from "apollo-server-express";
